@@ -28,7 +28,7 @@ export default function Hero() {
       />
       <div className="block md:hidden absolute inset-0">
         <Image
-          src="/media/images/Untitled-20260422-133559-8620-2x.png"
+          src="/media/images/small-screen-banner.png"
           alt="Alshami hero"
           fill
           sizes="100vw"
