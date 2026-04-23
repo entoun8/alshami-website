@@ -26,13 +26,16 @@ export default function Hero() {
         className="hidden md:block absolute inset-0 w-full h-full object-cover"
         src="/media/videos/banner.mp4"
       />
-      <Image
-        src="/media/images/Untitled-20260422-133330-4204-2x.png"
-        alt="Alshami hero"
-        fill
-        className="block md:hidden object-cover"
-        priority
-      />
+      <div className="block md:hidden absolute inset-0">
+        <Image
+          src="/media/images/Untitled-20260422-133559-8620-2x.png"
+          alt="Alshami hero"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+      </div>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55" />
       {/* Content */}
