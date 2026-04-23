@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 
 const container: Variants = {
@@ -22,8 +23,15 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
         src="/media/videos/banner.mp4"
+      />
+      <Image
+        src="/media/images/Untitled-20260422-133330-4204-2x.png"
+        alt="Alshami hero"
+        fill
+        className="block md:hidden object-cover"
+        priority
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/55" />
