@@ -1,10 +1,16 @@
 import { ImageResponse } from "next/og";
+import fs from "fs/promises";
+import path from "path";
 
+export const runtime = "nodejs";
 export const alt = "Alshami — Authentic Syrian Coffee and Herbs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logoBuffer = await fs.readFile(path.join(process.cwd(), "public/logo.png"));
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -33,15 +39,29 @@ export default function Image() {
           }}
         />
 
+        {/* Logo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logoSrc}
+          width={160}
+          height={160}
+          alt="Alshami logo"
+          style={{
+            filter: "brightness(0) invert(1)",
+            marginBottom: "24px",
+            objectFit: "contain",
+          }}
+        />
+
         {/* Brand name */}
         <div
           style={{
-            fontSize: "100px",
+            fontSize: "72px",
             fontWeight: 700,
             color: "#FFFFFF",
-            letterSpacing: "-3px",
+            letterSpacing: "-2px",
             lineHeight: 1,
-            marginBottom: "12px",
+            marginBottom: "10px",
             display: "flex",
           }}
         >
@@ -51,11 +71,11 @@ export default function Image() {
         {/* Sub-brand label */}
         <div
           style={{
-            fontSize: "26px",
+            fontSize: "22px",
             fontWeight: 400,
             color: "#B8763A",
             letterSpacing: "7px",
-            marginBottom: "48px",
+            marginBottom: "36px",
             display: "flex",
           }}
         >
@@ -65,10 +85,10 @@ export default function Image() {
         {/* Divider */}
         <div
           style={{
-            width: "80px",
+            width: "60px",
             height: "2px",
             background: "rgba(255,255,255,0.25)",
-            marginBottom: "48px",
+            marginBottom: "36px",
             display: "flex",
           }}
         />
@@ -76,11 +96,11 @@ export default function Image() {
         {/* Tagline */}
         <div
           style={{
-            fontSize: "24px",
+            fontSize: "22px",
             fontWeight: 400,
             color: "rgba(255,255,255,0.65)",
             textAlign: "center",
-            maxWidth: "680px",
+            maxWidth: "640px",
             lineHeight: 1.5,
             display: "flex",
           }}
@@ -92,9 +112,9 @@ export default function Image() {
         <div
           style={{
             position: "absolute",
-            bottom: "40px",
-            right: "80px",
-            fontSize: "18px",
+            bottom: "36px",
+            right: "72px",
+            fontSize: "16px",
             color: "rgba(255,255,255,0.30)",
             display: "flex",
           }}
