@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "About Us — Alshami | Authentic Syrian Brands in Australia",
   description:
     "Learn about Alshami — the Australian business importing iconic Syrian brands Alshami Coffee and Al-Attar Herbs directly from Damascus. Discover our story, Syrian heritage, and mission.",
+  openGraph: {
+    title: "About Us — Alshami | Authentic Syrian Brands in Australia",
+    description:
+      "Learn about Alshami — the Australian business importing iconic Syrian brands Alshami Coffee and Al-Attar Herbs directly from Damascus. Discover our story, Syrian heritage, and mission.",
+  },
 };
 
 export default function AboutPage() {

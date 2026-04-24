@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Alshami — Authentic Syrian Brands in Australia",
   description:
     "Discover Alshami Coffee and Al-Attar Herbs — two historic Syrian brands imported directly from Damascus and delivered across Australia.",
+  openGraph: {
+    title: "Alshami — Authentic Syrian Brands in Australia",
+    description:
+      "Discover Alshami Coffee and Al-Attar Herbs — two historic Syrian brands imported directly from Damascus and delivered across Australia.",
+  },
 };
 
 export default function Home() {

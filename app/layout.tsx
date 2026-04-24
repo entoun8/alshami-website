@@ -13,6 +13,25 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Alshami",
   description: "Authentic Syrian brands in Australia — Alshami Coffee and Al-Attar Herbs.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      (process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "https://alshami-website-git-main-entouns-projects.vercel.app")
+  ),
+  openGraph: {
+    title: "Alshami",
+    description: "Authentic Syrian brands in Australia — Alshami Coffee and Al-Attar Herbs.",
+    url: "/",
+    siteName: "Alshami",
+    locale: "en_AU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alshami",
+    description: "Authentic Syrian brands in Australia — Alshami Coffee and Al-Attar Herbs.",
+  },
 };
 
 export default function RootLayout({
