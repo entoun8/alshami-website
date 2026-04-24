@@ -36,8 +36,14 @@
   --brand-red: #c82014; /* error, destructive states */
   --brand-yellow: #fbbc05; /* warning state */
 
+  /* --- Overlay & Surface Utilities --- */
+  --overlay-hero: rgba(0, 0, 0, 0.55);       /* full-screen video overlay */
+  --overlay-backdrop: rgba(0, 0, 0, 0.4);    /* mobile drawer backdrop */
+  --border-white-subtle: rgba(255, 255, 255, 0.1); /* dividers on dark surfaces */
+
   /* --- Elevation / Shadow stacks --- */
-  --shadow-card: 0 0 0.5px rgba(0, 0, 0, 0.14), 0 1px 1px rgba(0, 0, 0, 0.24);
+  --shadow-card-product: 0 0 0.5px rgba(0, 0, 0, 0.14), 0 1px 1px rgba(0, 0, 0, 0.24), 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-card-subtle: 0 0 0.5px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-nav: 0 1px 3px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.06),
     0 0 2px rgba(0, 0, 0, 0.07);
 
@@ -144,6 +150,16 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Shadow utilities */
+  --shadow-nav: var(--shadow-nav);
+  --shadow-card-product: var(--shadow-card-product);
+  --shadow-card-subtle: var(--shadow-card-subtle);
+
+  /* Overlay & border utilities */
+  --color-overlay-hero: var(--overlay-hero);
+  --color-overlay-backdrop: var(--overlay-backdrop);
+  --color-border-white-subtle: var(--border-white-subtle);
 
   /* Radius utilities */
   --radius-sm: calc(var(--radius) * 0.6);

@@ -2,11 +2,8 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/container";
-import StatCountUp from "@/components/stat-count-up";
-
-type NumericFact = { numeric: true; value: number; suffix?: string; label: string };
-type StringFact = { numeric?: false; value: string; label: string };
-type Fact = NumericFact | StringFact;
+import FactGrid, { type Fact } from "@/components/fact-grid";
+import { fadeUp } from "@/lib/motion-variants";
 
 const facts: Fact[] = [
   { numeric: true, value: 1924, label: "Founded in Damascus" },
@@ -21,10 +18,7 @@ export default function CoffeeHistory() {
       <Container>
         <motion.div
           className="max-w-[80rem] mx-auto flex flex-col gap-[4.8rem]"
-          initial={{ opacity: 0, y: 48 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          {...fadeUp}
         >
           <div className="flex flex-col gap-[2rem]">
             <h2 className="text-[3.2rem] md:text-[4rem] font-bold text-alshami-brown leading-tight tracking-tight">
@@ -38,25 +32,7 @@ export default function CoffeeHistory() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[2.4rem] md:gap-[3.2rem]">
-            {facts.map((fact) => (
-              <div
-                key={fact.label}
-                className="flex flex-col gap-[0.8rem] p-[2.4rem] rounded-[1.2rem] bg-warm-ivory"
-              >
-                <span className="text-[2.8rem] md:text-[3.2rem] xl:text-[3.6rem] font-bold text-caramel leading-none text-balance">
-                  {fact.numeric ? (
-                    <StatCountUp value={fact.value} suffix={fact.suffix} />
-                  ) : (
-                    fact.value
-                  )}
-                </span>
-                <span className="text-[1.4rem] text-text-black-soft leading-snug">
-                  {fact.label}
-                </span>
-              </div>
-            ))}
-          </div>
+          <FactGrid facts={facts} />
         </motion.div>
       </Container>
     </section>

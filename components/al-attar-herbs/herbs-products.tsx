@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/container";
-import ProductCard from "@/components/alshami-coffee/product-card";
+import ProductCard from "@/components/product-card";
+import { containerVariants, cardVariants } from "@/lib/motion-variants";
 
 const products = [
   {
@@ -35,20 +36,6 @@ const products = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
-
 export default function HerbsProducts() {
   return (
     <section className="bg-warm-ivory py-[6.4rem] md:py-[9.6rem]">
@@ -66,7 +53,7 @@ export default function HerbsProducts() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-[2rem] md:gap-[2.4rem] lg:gap-[3.2rem]"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-[2rem] md:gap-[2.4rem] lg:gap-[3.2rem]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

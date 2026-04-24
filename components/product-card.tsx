@@ -14,15 +14,8 @@ export default function ProductCard({
   imageAlt,
 }: ProductCardProps) {
   return (
-    <div
-      className="flex flex-col rounded-[1.2rem] overflow-hidden bg-white"
-      style={{
-        boxShadow:
-          "0 0 0.5px rgba(0,0,0,0.14), 0 1px 1px rgba(0,0,0,0.24), 0 4px 12px rgba(0,0,0,0.08)",
-      }}
-    >
-      {/* Image — top 60% of card */}
-      <div className="relative w-full" style={{ paddingBottom: "60%" }}>
+    <div className="flex flex-col rounded-[1.2rem] overflow-hidden bg-card shadow-card-product">
+      <div className="relative w-full aspect-[5/3]">
         <Image
           src={imageSrc}
           alt={imageAlt}
@@ -32,7 +25,6 @@ export default function ProductCard({
         />
       </div>
 
-      {/* Content */}
       <div className="flex flex-col gap-[1rem] p-[2rem] md:p-[2.4rem] flex-1">
         <h3 className="text-[1.6rem] font-semibold text-alshami-brown leading-tight">
           {name}

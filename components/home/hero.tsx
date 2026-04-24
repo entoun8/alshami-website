@@ -36,9 +36,7 @@ export default function Hero() {
           priority
         />
       </div>
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/55" />
-      {/* Content */}
+      <div className="absolute inset-0 bg-overlay-hero" />
       <motion.div
         className="relative z-10 text-center px-[1.6rem] md:px-[2.4rem]"
         variants={container}
@@ -47,13 +45,13 @@ export default function Hero() {
       >
         <motion.h1
           variants={item}
-          className="text-[4.8rem] sm:text-[5.6rem] md:text-[6.4rem] lg:text-[8rem] font-bold text-white leading-[1.1] tracking-tight"
+          className="text-[4.8rem] sm:text-[5.6rem] md:text-[6.4rem] lg:text-[8rem] font-bold text-text-white leading-[1.1] tracking-tight"
         >
           Alshami
         </motion.h1>
         <motion.p
           variants={item}
-          className="text-[1.7rem] md:text-[2rem] text-white/80 mt-[1.6rem] max-w-[52rem] mx-auto leading-relaxed"
+          className="text-[1.7rem] md:text-[2rem] text-text-white-soft mt-[1.6rem] max-w-[52rem] mx-auto leading-relaxed"
         >
           Authentic Syrian heritage, delivered to your door across Australia.
         </motion.p>

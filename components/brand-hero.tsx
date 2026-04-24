@@ -4,7 +4,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "@/components/container";
 
-export default function HerbsHero() {
+interface BrandHeroProps {
+  estLabel: string;
+  heading: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+export default function BrandHero({
+  estLabel,
+  heading,
+  description,
+  imageSrc,
+  imageAlt,
+}: BrandHeroProps) {
   return (
     <section className="bg-dark-espresso pt-[8rem] md:pt-[12rem] pb-[6.4rem] md:pb-[9.6rem]">
       <Container>
@@ -16,13 +30,13 @@ export default function HerbsHero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <p className="text-[1.4rem] font-semibold uppercase tracking-widest text-caramel">
-              Est. Damascus, 1990
+              {estLabel}
             </p>
             <h1 className="text-[4rem] md:text-[5.6rem] lg:text-[6.4rem] font-bold text-text-white leading-tight tracking-tight">
-              Al-Attar Herbs
+              {heading}
             </h1>
             <p className="text-[1.8rem] md:text-[2rem] text-text-white-soft leading-relaxed max-w-[52rem]">
-              Over 35 years of herbal expertise. 100% natural, allergen-free herbal teas crafted in specialised research laboratories — rooted in Syria&apos;s ancient tradition of natural medicine.
+              {description}
             </p>
           </motion.div>
 
@@ -34,8 +48,8 @@ export default function HerbsHero() {
           >
             <div className="relative w-full aspect-[4/3] rounded-[1.2rem] overflow-hidden">
               <Image
-                src="/media/images/Untitled-20260422-133751-1683-2x.png"
-                alt="Al-Attar Herbs — 100% natural Syrian herbal teas since 1990"
+                src={imageSrc}
+                alt={imageAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"

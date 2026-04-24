@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/container";
+import { fadeUp } from "@/lib/motion-variants";
 
 const contactMethods = [
   {
@@ -64,13 +65,6 @@ const socialLinks = [
   },
 ];
 
-const fadeUp = {
-  initial: { opacity: 0, y: 48 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.7, ease: "easeOut" as const },
-};
-
 export default function ContactDetails() {
   return (
     <>
@@ -110,7 +104,7 @@ export default function ContactDetails() {
                   key={label}
                   href={href}
                   {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="flex flex-col gap-[1.2rem] p-[3.2rem] rounded-[1.2rem] bg-warm-ivory shadow-[0_0_0.5px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)] transition-transform hover:-translate-y-1"
+                  className="flex flex-col gap-[1.2rem] p-[3.2rem] rounded-[1.2rem] bg-warm-ivory shadow-card-subtle transition-transform hover:-translate-y-1"
                 >
                   <span className="text-[1.2rem] font-semibold uppercase tracking-widest text-caramel">
                     {label}
@@ -149,7 +143,7 @@ export default function ContactDetails() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col gap-[2rem] p-[3.2rem] rounded-[1.2rem] bg-alshami-cream shadow-[0_0_0.5px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)]"
+                  className="flex flex-col gap-[2rem] p-[3.2rem] rounded-[1.2rem] bg-alshami-cream shadow-card-subtle"
                   initial={{ opacity: 0, y: 32 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ y: -4 }}

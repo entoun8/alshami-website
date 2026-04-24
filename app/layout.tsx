@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ??
       (process.env.VERCEL_URL
         ? `https://${process.env.VERCEL_URL}`
-        : "https://alshami-website-git-main-entouns-projects.vercel.app")
+        : "http://localhost:3000")
   ),
   openGraph: {
     title: "Alshami",

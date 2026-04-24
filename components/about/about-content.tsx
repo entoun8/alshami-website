@@ -3,13 +3,7 @@
 import { motion } from "framer-motion";
 import Container from "@/components/container";
 import StatCountUp from "@/components/stat-count-up";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 48 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.7, ease: "easeOut" as const },
-};
+import { fadeUp } from "@/lib/motion-variants";
 
 export default function AboutContent() {
   return (
@@ -55,10 +49,8 @@ export default function AboutContent() {
         <Container>
           <motion.div
             className="max-w-[80rem] mx-auto flex flex-col gap-[4rem]"
-            initial={{ opacity: 0, y: 48 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
           >
             <div>
               <h2 className="text-[3.2rem] md:text-[4rem] font-bold text-alshami-brown leading-tight tracking-tight mb-[2rem]">
@@ -72,6 +64,8 @@ export default function AboutContent() {
               </p>
             </div>
 
+            {/* Intentionally unstyled — these are inline stats within a text section.
+                FactGrid is for dedicated stat bands with card backgrounds. */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-[2.4rem] mt-[1.6rem]">
               {[
                 { value: 1924, label: "Alshami Coffee founded" },
@@ -98,10 +92,8 @@ export default function AboutContent() {
         <Container>
           <motion.div
             className="max-w-[80rem] mx-auto"
-            initial={{ opacity: 0, y: 48 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
           >
             <h2 className="text-[3.2rem] md:text-[4rem] font-bold text-alshami-brown leading-tight tracking-tight mb-[2rem]">
               Our Mission

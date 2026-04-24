@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Alshami — Authentic Syrian Brands in Australia",
   description:
     "Discover Alshami Coffee and Al-Attar Herbs — two historic Syrian brands imported directly from Damascus and delivered across Australia.",
+  openGraph: {
+    title: "Alshami — Authentic Syrian Brands in Australia",
+    description:
+      "Discover Alshami Coffee and Al-Attar Herbs — two historic Syrian brands imported directly from Damascus and delivered across Australia.",
+  },
 };
 
 export default function Home() {
@@ -14,8 +19,8 @@ export default function Home() {
     <main>
       <Hero />
 
-      <section className="bg-alshami-cream py-32 md:py-48">
-        <Container className="flex flex-col gap-32 md:gap-48">
+      <section className="bg-alshami-cream py-[6.4rem] md:py-[9.6rem]">
+        <Container className="flex flex-col gap-[6.4rem] md:gap-[9.6rem]">
           <BrandIntro
             imageSrc="/media/images/Untitled-20260422-133330-4204-2x.png"
             imageAlt="Alshami Coffee — premium Syrian coffee blends since 1924"

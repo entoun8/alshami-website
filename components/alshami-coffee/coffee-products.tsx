@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Container from "@/components/container";
-import ProductCard from "./product-card";
+import ProductCard from "@/components/product-card";
+import { containerVariants, cardVariants } from "@/lib/motion-variants";
 
 const products = [
   {
@@ -48,20 +49,6 @@ const products = [
     imageAlt: "Alshami Arabic Coffee Mix",
   },
 ];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-};
 
 export default function CoffeeProducts() {
   return (
