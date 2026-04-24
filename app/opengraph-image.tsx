@@ -39,19 +39,28 @@ export default async function Image() {
           }}
         />
 
-        {/* Logo */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={logoSrc}
-          width={160}
-          height={160}
-          alt="Alshami logo"
+        {/* Logo in white circle so it's always visible on dark background */}
+        <div
           style={{
-            filter: "brightness(0) invert(1)",
+            background: "#FFFFFF",
+            borderRadius: "50%",
+            width: "160px",
+            height: "160px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             marginBottom: "24px",
-            objectFit: "contain",
           }}
-        />
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoSrc}
+            width={120}
+            height={120}
+            alt="Alshami logo"
+            style={{ objectFit: "contain" }}
+          />
+        </div>
 
         {/* Brand name */}
         <div
